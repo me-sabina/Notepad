@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Notepad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Notepad</h1>
+        <div class="top-bar">
+            <input type="text" id="noteTitle" placeholder="Enter note title...">
+            <div class="toolbar">
+                <button onclick="formatText('bold')"><b>B</b></button>
+                <button onclick="formatText('italic')"><i>I</i></button>
+                <button onclick="formatText('underline')"><u>U</u></button>
+                <button onclick="formatText('insertUnorderedList')">• List</button>
+                <button onclick="toggleDarkMode()">🌓</button>
+            </div>
+        </div>
+        <div id="editor" contenteditable="true" placeholder="Start typing your notes here..."></div>
+        <div class="status-bar">
+            <span id="wordCount">Word Count: 0</span>
+            <span id="timestamp"></span>
+        </div>
+        <div class="buttons">
+            <button onclick="saveNote()">Save Note</button>
+            <button onclick="clearEditor()">Clear</button>
+            <button onclick="downloadNote()">Download .txt</button>
+        </div>
+        <div class="note-list">
+            <h2>Your Notes</h2>
+            <input type="text" id="searchBar" placeholder="Search notes..." oninput="searchNotes()">
+            <ul id="notesContainer"></ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
